@@ -23,7 +23,7 @@ export default function Header() {
     <header className="border-b border-zinc-100 bg-white">
       <div className="mx-auto flex max-w-6xl items-center gap-6 px-4 py-3">
         <Link href="/" className="shrink-0 text-lg font-bold text-zinc-900">
-          🤖 K-AI Device Mall
+          🤖 AI Device Mall
         </Link>
 
         <form onSubmit={handleSearch} className="flex flex-1 max-w-xl items-center">

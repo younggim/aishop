@@ -4,7 +4,7 @@ export default function MembershipPage() {
   return (
     <div className="flex flex-col gap-6 py-8">
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold text-zinc-900">K-AI Device Mall 멤버십</h1>
+        <h1 className="text-2xl font-bold text-zinc-900">AI Device Mall 멤버십</h1>
         <p className="text-sm text-zinc-500">
           연간 구매액에 따라 등급이 결정되며, 등급이 올라갈수록 더 많은 적립과 혜택을 받을 수 있습니다.
         </p>

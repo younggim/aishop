@@ -13,27 +13,29 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <section className="my-6 flex flex-col gap-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-8 py-12 text-white">
-        <span className="text-sm font-medium opacity-80">K-AI DEVICE MALL</span>
+        <span className="text-sm font-medium opacity-80">AI DEVICE MALL</span>
         <h1 className="text-3xl font-bold sm:text-4xl">
-          일상을 바꾸는 AI 디바이스,
-          <br />한 곳에서 만나보세요
+          Agentic/Multi-agent AI 구현을 위한
+          <br />장비 및 장치를 신속하고 저렴하게
         </h1>
         <p className="max-w-md text-sm opacity-90">
-          스마트홈부터 뷰티디바이스까지, AI가 탑재된 기기를 큐레이션합니다.
+          대여하고 AI의 변화를 누려보세요.
         </p>
       </section>
 
-      <section className="grid grid-cols-3 gap-3 py-4 sm:grid-cols-7">
-        {categories.map((category) => (
-          <Link
-            key={category.id}
-            href={`/category/${category.id}`}
-            className="flex flex-col items-center gap-2 rounded-xl border border-zinc-100 bg-white p-4 text-center transition hover:border-indigo-300 hover:shadow-sm"
-          >
-            <span className="text-3xl">{category.emoji}</span>
-            <span className="text-xs font-medium text-zinc-700">{category.name}</span>
-          </Link>
-        ))}
+      <section className="grid grid-cols-3 gap-3 py-4 sm:grid-cols-5">
+        {categories
+          .filter((category) => category.id !== "healthcare" && category.id !== "security")
+          .map((category) => (
+            <Link
+              key={category.id}
+              href={`/category/${category.id}`}
+              className="flex flex-col items-center gap-2 rounded-xl border border-zinc-100 bg-white p-4 text-center transition hover:border-indigo-300 hover:shadow-sm"
+            >
+              <span className="text-3xl">{category.emoji}</span>
+              <span className="text-xs font-medium text-zinc-700">{category.name}</span>
+            </Link>
+          ))}
       </section>
 
       <CurationSection
@@ -63,7 +65,7 @@ export default function Home() {
       />
       <CurationSection
         title="글로벌 HOT"
-        subtitle="해외에서도 인기 있는 K-AI 디바이스"
+        subtitle="해외에서도 인기 있는 AI 디바이스"
         products={getProductsByTag("globalHot")}
       />
     </div>

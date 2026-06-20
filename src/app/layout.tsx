@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "K-AI Device Mall — AI 디바이스 전문 쇼핑몰",
+  title: "AI Device Mall — AI 디바이스 전문 쇼핑몰",
   description: "스마트홈, 웨어러블, 로봇, 헬스케어, 보안, 오피스, 뷰티디바이스까지 AI 기기 전문 쇼핑몰",
 };
 

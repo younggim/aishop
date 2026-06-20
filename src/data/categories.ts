@@ -39,9 +39,9 @@ export const categories: Category[] = [
   },
   {
     id: "beautydevice",
-    name: "AI 뷰티디바이스",
-    emoji: "✨",
-    subCategories: ["AI 피부분석기", "스마트 미러", "LED 마스크", "AI 체형관리", "스마트 칫솔"],
+    name: "AI 플랫폼",
+    emoji: "🧠",
+    subCategories: ["Claude Code", "Gemini", "ChatGPT", "Deepseek"],
   },
 ];
 

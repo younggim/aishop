@@ -2,7 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCategoryById, categories } from "@/data/categories";
 import { getProductsByCategory } from "@/data/products";
+import { aiPlatforms } from "@/data/aiPlatforms";
 import ProductCard from "@/components/ProductCard";
+
+const AI_PLATFORM_CATEGORY_ID = "beautydevice";
 
 export function generateStaticParams() {
   return categories.map((category) => ({ categoryId: category.id }));
@@ -38,6 +41,45 @@ export default async function CategoryPage({
   const { sort } = await searchParams;
   const category = getCategoryById(categoryId);
   if (!category) notFound();
+
+  if (categoryId === AI_PLATFORM_CATEGORY_ID) {
+    return (
+      <div className="flex flex-col gap-6 py-6">
+        <div className="flex flex-col gap-2">
+          <h1 className="text-2xl font-bold text-zinc-900">
+            {category.emoji} {category.name}
+          </h1>
+          <div className="flex flex-wrap gap-2">
+            {category.subCategories.map((sub) => (
+              <span
+                key={sub}
+                className="rounded-full bg-white px-3 py-1 text-xs text-zinc-600 ring-1 ring-zinc-200"
+              >
+                {sub}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {aiPlatforms.map((platform) => (
+            <a
+              key={platform.id}
+              href={platform.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col gap-2 rounded-xl border border-zinc-100 bg-white p-5 transition hover:border-indigo-300 hover:shadow-sm"
+            >
+              <span className="text-3xl">{platform.emoji}</span>
+              <span className="font-semibold text-zinc-900">{platform.name}</span>
+              <span className="text-sm text-zinc-500">{platform.description}</span>
+              <span className="mt-2 text-sm font-medium text-indigo-600">가입하기 →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   const sortOption: SortOption =
     sort === "priceAsc" || sort === "priceDesc" || sort === "rating" ? sort : "popular";
