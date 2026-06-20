@@ -5,6 +5,12 @@ export default function Footer() {
         <p className="font-semibold text-zinc-700">K-AI Device Mall</p>
         <p>대한민국 NO.1 AI 디바이스 멀티채널 커머스 플랫폼</p>
         <p>사업자 정보 · 이용약관 · 개인정보처리방침 · 고객센터 1588-0000</p>
+        <p>
+          담당자 Jaeyoung Kim ·{" "}
+          <a href="mailto:jaeyoungai1@gmail.com" className="hover:text-zinc-700 hover:underline">
+            jaeyoungai1@gmail.com
+          </a>
+        </p>
         <p>© 2026 K-AI Device Mall. All rights reserved.</p>
       </div>
     </footer>
